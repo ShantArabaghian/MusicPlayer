@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+/* Base styles */
+.songlist button {
+  background: transparent;
+  border-radius: 50%;
+  margin-top: 10px;
+  height: 30px;
+  width: 30px;
+  color: #666666;
+  border: 1px solid white;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttons-play {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: start;
+  gap: 20px;
+  margin: 20px auto;
+  background-color: #eaeaea;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 800px; /* Adjust the max width as per your design */
 }
 
-.App-link {
-  color: #61dafb;
+.buttons-play button {
+  cursor: pointer;
+  background-color: #efefef;
+  border-radius: 5px;
+  padding: 5px 20px;
+  text-align: left;
+  /* Remove flex properties if you want to preserve the original size on desktop */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tableheader {
+  background-color: #eeeeee;
+  font-size: 13px;
+  color: #707884;
+  text-align: left;
+}
+
+.songlist td:nth-child(1) {
+  width: 5%; /* Adjust width as needed */
+}
+
+.songlist td:nth-child(2), .songlist td:nth-child(3) {
+  width: auto; /* Adjust width as needed */
+}
+
+table {
+  width: 100%;
+  max-width: 800px; /* Adjust the max width as per your design */
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.songlist td {
+  color: #908785;
+  text-align: left;
+  padding-left: 10px;
+  border-bottom: 3px solid #f3f3f3;
+}
+
+.tableheader th {
+  padding: 10px 0;
+  border-right: 3px solid white;
+}
+
+.footer {
+  margin: 50px auto;
+  max-width: 800px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .buttons-play {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .buttons-play button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .songlist td, .tableheader th {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .songlist td, .tableheader th {
+    font-size: 11px;
   }
 }
